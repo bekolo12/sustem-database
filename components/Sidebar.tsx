@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { COMPANY_DATA } from '../constants';
+import { COMPANY_DATA, COLOR_CONFIG } from '../constants';
 
 interface SidebarProps {
   isOpen: boolean;
@@ -79,6 +79,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onNavigate, onClose })
           <div className="space-y-1">
             {COMPANY_DATA.departments.map((dept) => {
               const isExpanded = expandedDeptIds.includes(dept.id);
+              const iconClass = COLOR_CONFIG[dept.color].icon;
               
               return (
                 <div key={dept.id}>
@@ -91,7 +92,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onNavigate, onClose })
                     onClick={() => toggleDept(dept.id)}
                   >
                     <div className="flex items-center gap-3">
-                      <div className={`w-6 flex justify-center text-${dept.color}-400 group-hover:scale-110 transition-transform`}>
+                      <div className={`w-6 flex justify-center ${iconClass} group-hover:scale-110 transition-transform`}>
                         <i className={`fas fa-${dept.icon}`}></i>
                       </div>
                       <span className="text-sm font-medium text-slate-200 group-hover:text-white">{dept.name}</span>

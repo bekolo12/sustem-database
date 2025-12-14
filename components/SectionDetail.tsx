@@ -31,7 +31,7 @@ export const SectionDetail: React.FC<SectionDetailProps> = ({ dept, section, onB
           <div className={`absolute -right-10 -top-10 w-64 h-64 ${colors.bg} opacity-5 rounded-full blur-3xl`}></div>
           
           <div className="relative z-10 flex flex-col md:flex-row md:items-center gap-6">
-            <div className={`w-20 h-20 ${colors.bg} rounded-2xl flex items-center justify-center text-white shadow-lg shadow-${dept.color}-500/30`}>
+            <div className={`w-20 h-20 ${colors.bg} rounded-2xl flex items-center justify-center text-white shadow-lg ${colors.shadow}`}>
               <i className={`fas fa-${dept.icon} text-3xl`}></i>
             </div>
             <div>

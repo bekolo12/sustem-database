@@ -143,12 +143,66 @@ export const COMPANY_DATA: CompanyData = {
 };
 
 export const COLOR_CONFIG = {
-  blue: { bg: 'bg-blue-500', light: 'bg-blue-50', text: 'text-blue-600', border: 'border-blue-500', hover: 'hover:bg-blue-600' },
-  green: { bg: 'bg-green-500', light: 'bg-green-50', text: 'text-green-600', border: 'border-green-500', hover: 'hover:bg-green-600' },
-  orange: { bg: 'bg-orange-500', light: 'bg-orange-50', text: 'text-orange-600', border: 'border-orange-500', hover: 'hover:bg-orange-600' },
-  purple: { bg: 'bg-purple-500', light: 'bg-purple-50', text: 'text-purple-600', border: 'border-purple-500', hover: 'hover:bg-purple-600' },
-  red: { bg: 'bg-red-500', light: 'bg-red-50', text: 'text-red-600', border: 'border-red-500', hover: 'hover:bg-red-600' },
-  yellow: { bg: 'bg-yellow-500', light: 'bg-yellow-50', text: 'text-yellow-600', border: 'border-yellow-500', hover: 'hover:bg-yellow-600' }
+  blue: { 
+    bg: 'bg-blue-500', 
+    light: 'bg-blue-50', 
+    text: 'text-blue-600', 
+    border: 'border-blue-500', 
+    hover: 'hover:bg-blue-600',
+    icon: 'text-blue-400',
+    hoverBorder: 'hover:border-blue-200',
+    shadow: 'shadow-blue-500/30'
+  },
+  green: { 
+    bg: 'bg-green-500', 
+    light: 'bg-green-50', 
+    text: 'text-green-600', 
+    border: 'border-green-500', 
+    hover: 'hover:bg-green-600',
+    icon: 'text-green-400',
+    hoverBorder: 'hover:border-green-200',
+    shadow: 'shadow-green-500/30'
+  },
+  orange: { 
+    bg: 'bg-orange-500', 
+    light: 'bg-orange-50', 
+    text: 'text-orange-600', 
+    border: 'border-orange-500', 
+    hover: 'hover:bg-orange-600',
+    icon: 'text-orange-400',
+    hoverBorder: 'hover:border-orange-200',
+    shadow: 'shadow-orange-500/30'
+  },
+  purple: { 
+    bg: 'bg-purple-500', 
+    light: 'bg-purple-50', 
+    text: 'text-purple-600', 
+    border: 'border-purple-500', 
+    hover: 'hover:bg-purple-600',
+    icon: 'text-purple-400',
+    hoverBorder: 'hover:border-purple-200',
+    shadow: 'shadow-purple-500/30'
+  },
+  red: { 
+    bg: 'bg-red-500', 
+    light: 'bg-red-50', 
+    text: 'text-red-600', 
+    border: 'border-red-500', 
+    hover: 'hover:bg-red-600',
+    icon: 'text-red-400',
+    hoverBorder: 'hover:border-red-200',
+    shadow: 'shadow-red-500/30'
+  },
+  yellow: { 
+    bg: 'bg-yellow-500', 
+    light: 'bg-yellow-50', 
+    text: 'text-yellow-600', 
+    border: 'border-yellow-500', 
+    hover: 'hover:bg-yellow-600',
+    icon: 'text-yellow-400',
+    hoverBorder: 'hover:border-yellow-200',
+    shadow: 'shadow-yellow-500/30'
+  }
 };
 
 export const LABEL_ICONS: Record<string, string> = {

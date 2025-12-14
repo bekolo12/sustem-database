@@ -43,7 +43,7 @@ export const DepartmentCard: React.FC<DepartmentCardProps> = ({ dept, onSelectSe
               onClick={() => onSelectSection(dept.id, section.id)}
               className={`
                 w-full text-left p-3 rounded-xl ${colors.light} 
-                hover:shadow-md transition-all duration-200 group border border-transparent hover:border-${dept.color}-200
+                hover:shadow-md transition-all duration-200 group border border-transparent ${colors.hoverBorder}
               `}
             >
               <div className="flex items-center justify-between mb-2">
