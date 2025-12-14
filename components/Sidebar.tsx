@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { COMPANY_DATA } from '../constants';
-import { ActiveSectionState } from '../types';
 
 interface SidebarProps {
   isOpen: boolean;
