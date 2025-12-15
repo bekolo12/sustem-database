@@ -24,8 +24,8 @@ const App: React.FC = () => {
     ? COMPANY_DATA.departments.find(d => d.id === activeSection.deptId) 
     : null;
     
-  const currentSection = currentDept 
-    ? currentDept.sections.find(s => s.id === activeSection.sectionId) 
+  conconst currentSection = currentDept && activeSection
+    ? currentDept.sections.find(s => s.id === activeSection.sectionId)
     : null;
 
   return (
