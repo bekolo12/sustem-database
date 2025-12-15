@@ -8,8 +8,25 @@ import { COMPANY_DATA } from './constants';
 import { ActiveSectionState } from './types';
 
 const App: React.FC = () => {
+  // Authentication State
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+
+  // App State
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [activeSection, setActiveSection] = useState<ActiveSectionState | null>(null);
+
+  const handleLogin = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (username.trim() === 'baker' && password === '0000') {
+      setIsAuthenticated(true);
+      setError('');
+    } else {
+      setError('Invalid username or password');
+    }
+  };
 
   const handleNavigate = (deptId: number | null, sectionId: string | null) => {
     if (deptId !== null && sectionId !== null) {
@@ -28,6 +45,84 @@ const App: React.FC = () => {
     ? currentDept.sections.find(s => s.id === activeSection.sectionId)
     : null;
 
+  // Render Login Screen if not authenticated
+  if (!isAuthenticated) {
+    return (
+      <div className="min-h-screen bg-slate-900 flex items-center justify-center p-4 relative overflow-hidden">
+        {/* Background Patterns */}
+        <div className="absolute inset-0 fiber-pattern opacity-10"></div>
+        <div className="absolute top-0 left-0 w-full h-full bg-[url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1920')] bg-cover bg-center opacity-10 mix-blend-overlay"></div>
+
+        <div className="bg-white rounded-3xl shadow-2xl w-full max-w-md p-8 relative z-10 animate-in fade-in zoom-in duration-500">
+          <div className="text-center mb-8">
+            <img 
+              src="https://media.licdn.com/dms/image/v2/C4D0BAQGxApknM8O3Vg/company-logo_200_200/company-logo_200_200/0/1630525227090" 
+              alt="Agile Logo" 
+              className="w-20 h-20 mx-auto rounded-2xl bg-slate-50 p-2 object-contain shadow-lg mb-4"
+              onError={(e) => {
+                (e.target as HTMLImageElement).src = 'https://ui-avatars.com/api/?name=Agile&background=0066CC&color=fff&size=80';
+              }}
+            />
+            <h1 className="text-2xl font-bold text-gray-800">Welcome Back</h1>
+            <p className="text-gray-500 text-sm mt-1">Sign in to FTTH Database System</p>
+          </div>
+
+          <form onSubmit={handleLogin} className="space-y-6">
+            {error && (
+              <div className="p-3 rounded-lg bg-red-50 text-red-600 text-sm flex items-center gap-2 border border-red-100">
+                <i className="fas fa-exclamation-circle"></i>
+                {error}
+              </div>
+            )}
+
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">Username</label>
+              <div className="relative">
+                <i className="fas fa-user absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                <input
+                  type="text"
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
+                  className="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-100 outline-none transition-all"
+                  placeholder="Enter username"
+                  required
+                />
+              </div>
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">Password</label>
+              <div className="relative">
+                <i className="fas fa-lock absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                <input
+                  type="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  className="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-100 outline-none transition-all"
+                  placeholder="Enter password"
+                  required
+                />
+              </div>
+            </div>
+
+            <button
+              type="submit"
+              className="w-full bg-blue-600 text-white py-3 rounded-xl font-semibold hover:bg-blue-700 transition-colors shadow-lg shadow-blue-500/30 flex items-center justify-center gap-2"
+            >
+              <span>Sign In</span>
+              <i className="fas fa-arrow-right text-sm"></i>
+            </button>
+          </form>
+
+          <div className="mt-8 pt-6 border-t border-gray-100 text-center">
+             <p className="text-xs text-gray-400">Agile Solutions • FTTH Management v2.0</p>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  // Render Main App
   return (
     <div className="flex min-h-screen bg-gray-50">
       {/* Sidebar */}
