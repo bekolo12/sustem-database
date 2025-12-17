@@ -127,7 +127,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onNavigate, onClose })
           {/* Shortcuts */}
           <div className="mt-8 pt-4 border-t border-slate-700">
             <p className="text-xs text-slate-500 uppercase tracking-wider px-4 mb-3 font-semibold">Shortcuts</p>
-            <div className="px-1">
+            <div className="px-1 space-y-3">
               <a 
                 href="https://baserow.io/workspace/160461" 
                 target="_blank" 
@@ -140,6 +140,22 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onNavigate, onClose })
                 <div>
                   <span className="font-medium text-sm block">Baserow Database</span>
                   <span className="text-[10px] text-emerald-200 uppercase tracking-wide">External Workspace</span>
+                </div>
+                <i className="fas fa-external-link-alt text-xs ml-auto opacity-75"></i>
+              </a>
+
+              <a 
+                href="https://aistudio.google.com/prompts/1vEoCqtWkdI6NjubInrCdAc6om--DSp9q" 
+                target="_blank" 
+                rel="noreferrer"
+                className="flex items-center gap-3 px-4 py-3 rounded-lg bg-gradient-to-r from-indigo-600 to-indigo-700 text-white hover:from-indigo-500 hover:to-indigo-600 transition-all shadow-lg hover:shadow-indigo-500/25 group"
+              >
+                <div className="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <i className="fas fa-paper-plane"></i>
+                </div>
+                <div>
+                  <span className="font-medium text-sm block">Document Sender</span>
+                  <span className="text-[10px] text-indigo-200 uppercase tracking-wide">Form for Ankidoo</span>
                 </div>
                 <i className="fas fa-external-link-alt text-xs ml-auto opacity-75"></i>
               </a>

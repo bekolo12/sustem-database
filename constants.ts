@@ -112,7 +112,7 @@ export const COMPANY_DATA: CompanyData = {
           name: "Power Management",
           labels: [
             { name: "Database", hyperlinked: false, url: null },
-            { name: "Active Dashboard", hyperlinked: true, url: "https://power-management-git-main-bakers-projects-2b4704d9.vercel.app/" },
+            { name: "Active Dashboard", hyperlinked: true, url: "https://power-management-beta.vercel.app/" },
             { name: "Bulk Data", hyperlinked: false, url: null },
             { name: "Micro Database", hyperlinked: true, url: "https://aistudio.google.com/apps/drive/1E5zggTXUHbENjbqjwL2OBczsRco7ydir?showAssistant=true&resourceKey=&showPreview=true" },
             { name: "Vercel Database", hyperlinked: true, url: "https://vercel.com/bakers-projects-2b4704d9/power-management/JEGMRDBAnDSZiAQCGGPgpUAZQuRb" }
