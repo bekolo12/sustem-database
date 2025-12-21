@@ -119,10 +119,10 @@ export const COMPANY_DATA: CompanyData = {
           labels: [
             { name: "Database", hyperlinked: false, url: null },
             { name: "Projected Dashboard", hyperlinked: true, url: "https://power-management-beta.vercel.app/" },
-            { name: "Bulk Data", hyperlinked: false, url: null },
+            { name: "Bulk Data", hyperlinked: true, url: "https://lookerstudio.google.com/reporting/8f62c738-dc1e-4a19-b01b-673ffb149374" },
             { name: "Micro Database", hyperlinked: true, url: "https://aistudio.google.com/apps/drive/1E5zggTXUHbENjbqjwL2OBczsRco7ydir?showAssistant=true&resourceKey=&showPreview=true" },
             { name: "Vercel Database", hyperlinked: true, url: "https://vercel.com/bakers-projects-2b4704d9/power-management/JEGMRDBAnDSZiAQCGGPgpUAZQuRb" },
-            { name: "Real Live Data Dashboard", hyperlinked: false, url: null }
+            { name: "Real Live Data Dashboard", hyperlinked: true, url: "https://lookerstudio.google.com/reporting/8f62c738-dc1e-4a19-b01b-673ffb149374" }
           ]
         }
       ]
