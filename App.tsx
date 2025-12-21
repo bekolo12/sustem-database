@@ -20,7 +20,7 @@ const App: React.FC = () => {
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    if (username.trim() === 'baker' && password === '0000') {
+    if (username.trim() === 'baker' && password === '1111') {
       setIsAuthenticated(true);
       setError('');
     } else {

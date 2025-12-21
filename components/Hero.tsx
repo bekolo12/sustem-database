@@ -40,7 +40,7 @@ export const Hero: React.FC = () => {
           {[
             { icon: 'building', text: '6 Departments', color: 'text-orange-400' },
             { icon: 'database', text: 'Multiple Databases', color: 'text-green-400' },
-            { icon: 'chart-line', text: 'Active Dashboards', color: 'text-yellow-400' }
+            { icon: 'chart-line', text: 'Projected Dashboards', color: 'text-yellow-400' }
           ].map((item, index) => (
             <div key={index} className="flex items-center gap-3 bg-white/10 backdrop-blur-md px-5 py-3 rounded-full border border-white/10 hover:bg-white/20 transition-colors cursor-default">
               <i className={`fas fa-${item.icon} ${item.color}`}></i>
