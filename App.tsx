@@ -20,7 +20,8 @@ const App: React.FC = () => {
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    if (username.trim() === 'baker' && password === '1234') {
+    // Updated password to 'autoarrange'
+    if (username.trim() === 'baker' && password === 'autoarrange') {
       setIsAuthenticated(true);
       setError('');
     } else {
