@@ -116,6 +116,27 @@ export const COMPANY_DATA: CompanyData = {
       ]
     },
     {
+      id: 7,
+      name: "Asiacell Department",
+      icon: "signal",
+      color: "purple",
+      description: "Asiacell Network Operations & Bulk Data Tracking",
+      sections: [
+        {
+          id: "asiacell_main",
+          name: "Asiacell Operations",
+          labels: [
+            { name: "Database", hyperlinked: false, url: null },
+            { name: "Projected Dashboard", hyperlinked: false, url: null },
+            { name: "Bulk Data", hyperlinked: true, url: "https://supercellnetworkiq-my.sharepoint.com/:x:/g/personal/baker__waleed_agile_iq/IQCpYZt1K-GrQYe6Q13VjOBCAWNrWqavlDz-xSl2GPpvm9U?e=MLzMq1" },
+            { name: "Micro Database", hyperlinked: false, url: null },
+            { name: "Vercel Database", hyperlinked: false, url: null },
+            { name: "Real Live Data Dashboard", hyperlinked: false, url: null }
+          ]
+        }
+      ]
+    },
+    {
       id: 1,
       name: "Enterprise Department",
       icon: "building",

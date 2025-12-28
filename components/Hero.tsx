@@ -33,12 +33,12 @@ export const Hero: React.FC = () => {
         </div>
         
         <p className="text-xl text-blue-100 max-w-2xl mb-10 leading-relaxed text-center md:text-left mx-auto md:mx-0">
-          Comprehensive Database Solution for Fiber to the Home Operations - Managing Enterprise, Consumer, and Fiber Deployment departments.
+          Comprehensive Database Solution for Fiber to the Home Operations - Managing Enterprise, Consumer, Fiber Deployment, and Partner departments.
         </p>
         
         <div className="flex flex-wrap gap-4 justify-center md:justify-start">
           {[
-            { icon: 'building', text: '6 Departments', color: 'text-orange-400' },
+            { icon: 'building', text: '7 Departments', color: 'text-orange-400' },
             { icon: 'database', text: 'Multiple Databases', color: 'text-green-400' },
             { icon: 'chart-line', text: 'Projected Dashboards', color: 'text-yellow-400' }
           ].map((item, index) => (
