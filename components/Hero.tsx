@@ -38,7 +38,7 @@ export const Hero: React.FC = () => {
         
         <div className="flex flex-wrap gap-4 justify-center md:justify-start">
           {[
-            { icon: 'building', text: '7 Departments', color: 'text-orange-400' },
+            { icon: 'building', text: '8 Departments', color: 'text-orange-400' },
             { icon: 'database', text: 'Multiple Databases', color: 'text-green-400' },
             { icon: 'chart-line', text: 'Projected Dashboards', color: 'text-yellow-400' }
           ].map((item, index) => (

@@ -137,6 +137,25 @@ export const COMPANY_DATA: CompanyData = {
       ]
     },
     {
+      id: 8,
+      name: "Ankido Department",
+      icon: "file-contract",
+      color: "blue",
+      description: "Ankido Planning and Civil Infrastructure Management",
+      sections: [
+        {
+          id: "ankido_main",
+          name: "Ankido Operations",
+          labels: [
+            { name: "Civil Plan", hyperlinked: true, url: "https://docs.google.com/spreadsheets/d/1O1XugQbCbyxCtxuHamAH1swGKiNuR-yZF8Zpl-82Mrc/edit?usp=sharing" },
+            { name: "Database", hyperlinked: false, url: null },
+            { name: "Bulk Data", hyperlinked: false, url: null },
+            { name: "Projected Dashboard", hyperlinked: false, url: null }
+          ]
+        }
+      ]
+    },
+    {
       id: 1,
       name: "Enterprise Department",
       icon: "building",
@@ -241,5 +260,6 @@ export const LABEL_ICONS: Record<string, string> = {
   'Micro Database': 'fa-cube',
   'Micro Database (Temp)': 'fa-cube',
   'Vercel Database': 'fa-cloud',
-  'Real Live Data Dashboard': 'fa-satellite-dish'
+  'Real Live Data Dashboard': 'fa-satellite-dish',
+  'Civil Plan': 'fa-drafting-compass'
 };
