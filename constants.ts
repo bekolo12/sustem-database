@@ -117,14 +117,14 @@ export const COMPANY_DATA: CompanyData = {
     },
     {
       id: 7,
-      name: "Asiacell Department",
+      name: "AsiaCell Department",
       icon: "signal",
       color: "purple",
-      description: "Asiacell Network Operations & Bulk Data Tracking",
+      description: "AsiaCell Network Operations & Bulk Data Tracking",
       sections: [
         {
           id: "asiacell_main",
-          name: "Asiacell Operations",
+          name: "AsiaCell Operations",
           labels: [
             { name: "Database", hyperlinked: false, url: null },
             { name: "Projected Dashboard", hyperlinked: false, url: null },
@@ -138,14 +138,14 @@ export const COMPANY_DATA: CompanyData = {
     },
     {
       id: 8,
-      name: "Ankido Department",
+      name: "Data Center Project",
       icon: "file-contract",
       color: "blue",
-      description: "Ankido Planning and Civil Infrastructure Management",
+      description: "Data Center Project Planning and Civil Infrastructure Management",
       sections: [
         {
-          id: "ankido_main",
-          name: "Ankido Operations",
+          id: "datacenter_project_main",
+          name: "Data Center Project Operations",
           labels: [
             { name: "Civil Plan", hyperlinked: true, url: "https://docs.google.com/spreadsheets/d/1O1XugQbCbyxCtxuHamAH1swGKiNuR-yZF8Zpl-82Mrc/edit?usp=sharing" },
             { name: "Database", hyperlinked: false, url: null },

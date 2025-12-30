@@ -155,7 +155,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onNavigate, onClose })
                 </div>
                 <div>
                   <span className="font-medium text-sm block">Document Sender</span>
-                  <span className="text-[10px] text-indigo-200 uppercase tracking-wide">Form for Ankidoo</span>
+                  <span className="text-[10px] text-indigo-200 uppercase tracking-wide">Form for Data Center Project</span>
                 </div>
                 <i className="fas fa-external-link-alt text-xs ml-auto opacity-75"></i>
               </a>
