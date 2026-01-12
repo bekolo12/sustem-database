@@ -35,10 +35,12 @@ export const COMPANY_DATA: CompanyData = {
           labels: [
             { name: "Database", hyperlinked: false, url: null },
             { name: "Projected Dashboard", hyperlinked: true, url: "https://user-installation.vercel.app/" },
-            { name: "Bulk Data", hyperlinked: true, url: "https://docs.google.com/spreadsheets/d/1tJT_nJrjAzS-FDqoqfYrl3f2xgUv_hBilPh_pxBA7B4/edit?usp=sharing" },
+            { name: "Bulk Data 2025", hyperlinked: true, url: "https://docs.google.com/spreadsheets/d/1tJT_nJrjAzS-FDqoqfYrl3f2xgUv_hBilPh_pxBA7B4/edit?usp=sharing" },
+            { name: "Bulk Data 2026", hyperlinked: true, url: "https://docs.google.com/spreadsheets/d/1oVDH7JsffVsPXvR1NU2RG6_l0eDksVCroyN9KYGwHpE/edit?usp=sharing" },
             { name: "Micro Database", hyperlinked: true, url: "https://aistudio.google.com/app/apps/drive/1NkxBNATXUDVkqTqufc3Dc4Om3gRfKtQQ?showAssistant=true&resourceKey=&showPreview=true" },
             { name: "Vercel Database", hyperlinked: true, url: "https://vercel.com/bakers-projects-2b4704d9/user-installation" },
-            { name: "Real Live Data Dashboard", hyperlinked: true, url: "https://lookerstudio.google.com/reporting/27b62ba7-baa2-4cea-a4a0-a770215162a1" }
+            { name: "Real Live Data 2025", hyperlinked: true, url: "https://lookerstudio.google.com/reporting/27b62ba7-baa2-4cea-a4a0-a770215162a1" },
+            { name: "Real Live Data 2026", hyperlinked: true, url: "https://lookerstudio.google.com/reporting/8004734d-6b2a-4efc-a030-abcf57aca890" }
           ]
         },
         {
@@ -257,9 +259,13 @@ export const LABEL_ICONS: Record<string, string> = {
   'Database': 'fa-database',
   'Projected Dashboard': 'fa-chart-line',
   'Bulk Data': 'fa-layer-group',
+  'Bulk Data 2025': 'fa-layer-group',
+  'Bulk Data 2026': 'fa-layer-group',
   'Micro Database': 'fa-cube',
   'Micro Database (Temp)': 'fa-cube',
   'Vercel Database': 'fa-cloud',
   'Real Live Data Dashboard': 'fa-satellite-dish',
+  'Real Live Data 2025': 'fa-satellite-dish',
+  'Real Live Data 2026': 'fa-satellite-dish',
   'Civil Plan': 'fa-drafting-compass'
 };
