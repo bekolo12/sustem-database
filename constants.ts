@@ -78,11 +78,11 @@ export const COMPANY_DATA: CompanyData = {
             { name: "Projected Dashboard 2025", hyperlinked: true, url: "https://bakerwaleed.vercel.app/" },
             { name: "Projected Dashboard 2026", hyperlinked: false, url: null },
             { name: "Bulk Data 2025", hyperlinked: true, url: "https://docs.google.com/spreadsheets/d/1GfX9Y7nu2aO_TBdyWcXLK54IOtKrlLyF-hc7TBocuvU/edit?usp=sharing" },
-            { name: "Bulk Data 2026", hyperlinked: false, url: null },
+            { name: "Bulk Data 2026", hyperlinked: true, url: "https://docs.google.com/spreadsheets/d/1_5j6tGfXAjJtVZunfZSeqaNIynu5PTu--S5YipShSrQ/edit?usp=sharing" },
             { name: "Micro Database", hyperlinked: true, url: "https://aistudio.google.com/apps/drive/19O9cobIUpEhkYNaHdQpRQq5cSNj8pYgG?showAssistant=true&resourceKey=&showPreview=true" },
             { name: "Vercel Database", hyperlinked: true, url: "https://vercel.com/bakers-projects-2b4704d9/bakerwaleed/DgyjDwyqVF8gGhNpN479o81qw2yy" },
             { name: "Real Live Data 2025", hyperlinked: true, url: "https://lookerstudio.google.com/reporting/8cedc4a2-9a96-4a32-b2a0-6d9006b9c7d1" },
-            { name: "Real Live Data 2026", hyperlinked: false, url: null }
+            { name: "Real Live Data 2026", hyperlinked: true, url: "https://lookerstudio.google.com/reporting/48a7c418-2944-48b6-a3bf-da04ad07e998" }
           ]
         }
       ]
