@@ -8,6 +8,7 @@ export interface Section {
   id: string;
   name: string;
   labels: Label[];
+  subSections?: Section[];
 }
 
 export interface Department {

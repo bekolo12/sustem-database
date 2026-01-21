@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { COMPANY_DATA, COLOR_CONFIG } from '../constants';
+import { Section } from '../types';
 
 interface SidebarProps {
   isOpen: boolean;
@@ -9,10 +10,18 @@ interface SidebarProps {
 
 export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onNavigate, onClose }) => {
   const [expandedDeptIds, setExpandedDeptIds] = useState<number[]>([]);
+  const [expandedSectionIds, setExpandedSectionIds] = useState<string[]>([]);
 
   const toggleDept = (id: number) => {
     setExpandedDeptIds(prev => 
       prev.includes(id) ? prev.filter(did => did !== id) : [...prev, id]
+    );
+  };
+
+  const toggleSection = (e: React.MouseEvent, id: string) => {
+    e.stopPropagation();
+    setExpandedSectionIds(prev => 
+      prev.includes(id) ? prev.filter(sid => sid !== id) : [...prev, id]
     );
   };
 
@@ -24,6 +33,48 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onNavigate, onClose })
   const handleSectionClick = (deptId: number, sectionId: string) => {
     onNavigate(deptId, sectionId);
     if (window.innerWidth < 1024) onClose();
+  };
+
+  // Recursive component for rendering sections and subsections
+  const renderSection = (section: Section, deptId: number, level: number = 0) => {
+    const hasSubSections = section.subSections && section.subSections.length > 0;
+    const isExpanded = expandedSectionIds.includes(section.id);
+    const paddingLeft = level * 12 + 12; // Base padding + indent
+
+    if (hasSubSections) {
+      return (
+        <div key={section.id}>
+          <button
+            onClick={(e) => toggleSection(e, section.id)}
+            className="w-full flex items-center justify-between py-2 px-3 text-sm text-slate-400 hover:text-white hover:bg-slate-700/50 rounded-lg transition-colors text-left border-l-2 border-transparent hover:border-slate-500"
+            style={{ paddingLeft: `${paddingLeft}px` }}
+          >
+            <div className="flex items-center gap-2">
+              <i className={`fas fa-angle-${isExpanded ? 'down' : 'right'} text-xs opacity-50`}></i>
+              {section.name}
+            </div>
+          </button>
+          <div className={`
+             overflow-hidden transition-all duration-300 ease-in-out
+             ${isExpanded ? 'max-h-[1000px] opacity-100' : 'max-h-0 opacity-0'}
+          `}>
+            {section.subSections!.map(sub => renderSection(sub, deptId, level + 1))}
+          </div>
+        </div>
+      );
+    }
+
+    return (
+      <button
+        key={section.id}
+        onClick={() => handleSectionClick(deptId, section.id)}
+        className="w-full flex items-center gap-2 py-2 px-3 text-sm text-slate-500 hover:text-white hover:bg-slate-700/50 rounded-lg transition-colors text-left"
+        style={{ paddingLeft: `${paddingLeft}px` }}
+      >
+        <span className="w-1 h-1 rounded-full bg-slate-500 shrink-0"></span>
+        <span className="truncate">{section.name}</span>
+      </button>
+    );
   };
 
   return (
@@ -106,17 +157,8 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onNavigate, onClose })
                       ${isExpanded ? 'max-h-[1000px] opacity-100' : 'max-h-0 opacity-0'}
                     `}
                   >
-                    <div className="pl-4 pr-2 py-1 space-y-1">
-                      {dept.sections.map((section) => (
-                        <button
-                          key={section.id}
-                          onClick={() => handleSectionClick(dept.id, section.id)}
-                          className="w-full flex items-center gap-2 py-2 px-3 text-sm text-slate-400 hover:text-white hover:bg-slate-700/50 rounded-lg transition-colors text-left border-l-2 border-transparent hover:border-slate-500 ml-2"
-                        >
-                          <i className="fas fa-angle-right text-xs opacity-50"></i>
-                          {section.name}
-                        </button>
-                      ))}
+                    <div className="pl-2 pr-2 py-1 space-y-1">
+                      {dept.sections.map((section) => renderSection(section, dept.id))}
                     </div>
                   </div>
                 </div>

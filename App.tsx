@@ -5,7 +5,7 @@ import { Stats } from './components/Stats';
 import { DepartmentCard } from './components/DepartmentCard';
 import { SectionDetail } from './components/SectionDetail';
 import { COMPANY_DATA } from './constants';
-import { ActiveSectionState } from './types';
+import { ActiveSectionState, Section } from './types';
 
 const App: React.FC = () => {
   // App State
@@ -25,8 +25,20 @@ const App: React.FC = () => {
     ? COMPANY_DATA.departments.find(d => d.id === activeSection.deptId) 
     : null;
     
+  // Helper to find section recursively or flatly
+  const findSection = (sections: Section[], id: string): Section | undefined => {
+    for (const section of sections) {
+      if (section.id === id) return section;
+      if (section.subSections) {
+        const found = findSection(section.subSections, id);
+        if (found) return found;
+      }
+    }
+    return undefined;
+  };
+
   const currentSection = currentDept && activeSection
-    ? currentDept.sections.find(s => s.id === activeSection.sectionId)
+    ? findSection(currentDept.sections, activeSection.sectionId)
     : null;
 
   return (

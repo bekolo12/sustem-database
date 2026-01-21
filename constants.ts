@@ -23,6 +23,50 @@ export const COMPANY_DATA: CompanyData = {
             { name: "Real Live Data 2025", hyperlinked: true, url: "https://lookerstudio.google.com/reporting/22226179-48aa-422b-a179-6f4e63d82601" },
             { name: "Real Live Data 2026", hyperlinked: false, url: null }
           ]
+        },
+        {
+          id: "regions_complex_reports",
+          name: "Regions Complex Reports",
+          labels: [],
+          subSections: [
+            {
+              id: "civil_progress",
+              name: "Civil Progress",
+              labels: [],
+              subSections: [
+                {
+                  id: "region_salah_al_deen",
+                  name: "Salah Al-Deen",
+                  labels: [
+                    { name: "Database", hyperlinked: false, url: null },
+                    { name: "Projected Dashboard", hyperlinked: false, url: null },
+                    { name: "Bulk Data", hyperlinked: true, url: "https://docs.google.com/spreadsheets/d/1DEX97Gl7CY1VvfT1lJEgrc82Pu6ufNSlkJ-q8bL40rM/edit?usp=sharing" },
+                    { name: "Real Live Data", hyperlinked: false, url: null }
+                  ]
+                },
+                {
+                  id: "region_baghdad",
+                  name: "Baghdad",
+                  labels: [
+                    { name: "Database", hyperlinked: false, url: null },
+                    { name: "Projected Dashboard", hyperlinked: false, url: null },
+                    { name: "Bulk Data", hyperlinked: true, url: "https://docs.google.com/spreadsheets/d/18MYYXJR-Zfg5ETAVUkGr1XuElbgCFe1QbndprO3nNtQ/edit?usp=sharing" },
+                    { name: "Real Live Data", hyperlinked: false, url: null }
+                  ]
+                },
+                {
+                  id: "region_thyqar",
+                  name: "Thyqar",
+                  labels: [
+                    { name: "Database", hyperlinked: false, url: null },
+                    { name: "Projected Dashboard", hyperlinked: false, url: null },
+                    { name: "Bulk Data", hyperlinked: true, url: "https://docs.google.com/spreadsheets/d/1fMiAUKl4HPFvKS5DDt-dfSOrq7m5aAhmUL2vNowh9Fo/edit?usp=sharing" },
+                    { name: "Real Live Data", hyperlinked: false, url: null }
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ]
     },
@@ -281,15 +325,21 @@ export const COLOR_CONFIG = {
 
 export const LABEL_ICONS: Record<string, string> = {
   'Database': 'fa-database',
+  'Projected Dashboard': 'fa-chart-line',
   'Projected Dashboard 2025': 'fa-chart-line',
   'Projected Dashboard 2026': 'fa-chart-line',
+  'Bulk Data': 'fa-layer-group',
   'Bulk Data 2025': 'fa-layer-group',
   'Bulk Data 2026': 'fa-layer-group',
   'Micro Database': 'fa-cube',
   'Micro Database (Temp)': 'fa-cube',
   'Vercel Database': 'fa-cloud',
+  'Real Live Data': 'fa-satellite-dish',
   'Real Live Data 2025': 'fa-satellite-dish',
   'Real Live Data 2026': 'fa-satellite-dish',
   'Civil Plan 2025': 'fa-drafting-compass',
-  'Civil Plan 2026': 'fa-drafting-compass'
+  'Civil Plan 2026': 'fa-drafting-compass',
+  'Salah Al-Deen': 'fa-map-marker-alt',
+  'Baghdad': 'fa-city',
+  'Thyqar': 'fa-landmark'
 };
