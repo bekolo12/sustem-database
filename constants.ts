@@ -65,6 +65,43 @@ export const COMPANY_DATA: CompanyData = {
                   ]
                 }
               ]
+            },
+            {
+              id: "fiber_progress",
+              name: "Fiber Progress",
+              labels: [],
+              subSections: [
+                {
+                  id: "fiber_region_salah_al_deen",
+                  name: "Salah Al-Deen",
+                  labels: [
+                    { name: "Database", hyperlinked: false, url: null },
+                    { name: "Projected Dashboard", hyperlinked: false, url: null },
+                    { name: "Bulk Data", hyperlinked: true, url: "https://docs.google.com/spreadsheets/d/1lQzLCQdDneEGemShtOqydYUIO2j9UqcD80ekQbD6ESw/edit?usp=sharing" },
+                    { name: "Real Live Data", hyperlinked: false, url: null }
+                  ]
+                },
+                {
+                  id: "fiber_region_baghdad",
+                  name: "Baghdad",
+                  labels: [
+                    { name: "Database", hyperlinked: false, url: null },
+                    { name: "Projected Dashboard", hyperlinked: false, url: null },
+                    { name: "Bulk Data", hyperlinked: true, url: "https://docs.google.com/spreadsheets/d/1_xOaw7WKmKNzLAXZFbksucVaUELiVpI54ELV8cDyLDU/edit?usp=sharing" },
+                    { name: "Real Live Data", hyperlinked: false, url: null }
+                  ]
+                },
+                {
+                  id: "fiber_region_thyqar",
+                  name: "Thyqar",
+                  labels: [
+                    { name: "Database", hyperlinked: false, url: null },
+                    { name: "Projected Dashboard", hyperlinked: false, url: null },
+                    { name: "Bulk Data", hyperlinked: true, url: "https://docs.google.com/spreadsheets/d/1uSl7mWaePVJzRCopbKuDbuPgvDIyLjkJF13f_HR-1IY/edit?usp=sharing" },
+                    { name: "Real Live Data", hyperlinked: false, url: null }
+                  ]
+                }
+              ]
             }
           ]
         }
