@@ -205,9 +205,9 @@ export const COMPANY_DATA: CompanyData = {
             { name: "Projected Dashboard 2025", hyperlinked: false, url: null },
             { name: "Projected Dashboard 2026", hyperlinked: false, url: null },
             { name: "Bulk Data 2025", hyperlinked: false, url: null },
-            { name: "Bulk Data 2026", hyperlinked: false, url: null },
+            { name: "Bulk Data 2026", hyperlinked: true, url: "https://docs.google.com/spreadsheets/d/15ZpQq9L-RvHUja0w3pjg6KtCsiYIzu5iynmBHjpKSRY/edit?usp=sharing" },
             { name: "Real Live Data 2025", hyperlinked: false, url: null },
-            { name: "Real Live Data 2026", hyperlinked: false, url: null }
+            { name: "Real Live Data 2026", hyperlinked: true, url: "https://lookerstudio.google.com/reporting/2e4af231-5965-42a6-b856-76dee36d6481" }
           ]
         }
       ]
@@ -227,7 +227,7 @@ export const COMPANY_DATA: CompanyData = {
             { name: "Projected Dashboard 2025", hyperlinked: false, url: null },
             { name: "Projected Dashboard 2026", hyperlinked: false, url: null },
             { name: "Bulk Data 2025", hyperlinked: true, url: "https://supercellnetworkiq-my.sharepoint.com/:x:/g/personal/baker__waleed_agile_iq/IQCpYZt1K-GrQYe6Q13VjOBCAWNrWqavlDz-xSl2GPpvm9U?e=MLzMq1" },
-            { name: "Bulk Data 2026", hyperlinked: false, url: null },
+            { name: "Bulk Data 2026", hyperlinked: true, url: "https://019c18bd-6caa-7910-920e-9fd612d5bbb1.arena.site/" },
             { name: "Real Live Data 2025", hyperlinked: false, url: null },
             { name: "Real Live Data 2026", hyperlinked: false, url: null }
           ]
