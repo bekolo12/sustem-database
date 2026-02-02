@@ -270,11 +270,11 @@ export const COMPANY_DATA: CompanyData = {
             { name: "Projected Dashboard 2025", hyperlinked: true, url: "https://enterprise-fiber-b51m.vercel.app/" },
             { name: "Projected Dashboard 2026", hyperlinked: false, url: null },
             { name: "Bulk Data 2025", hyperlinked: true, url: "https://docs.google.com/spreadsheets/d/1OXo4X_0K2OeuPfrsmMCUG7rOhPk_i5YoMebyE7f1rLg/edit?usp=sharing" },
-            { name: "Bulk Data 2026", hyperlinked: false, url: null },
+            { name: "Bulk Data 2026", hyperlinked: true, url: "https://docs.google.com/spreadsheets/d/1vLDhPkkWz6uEZ7vd6PM1NqoX2tjT8eJHcTxf3-Ca5AY/edit?usp=sharing" },
             { name: "Micro Database", hyperlinked: true, url: "https://aistudio.google.com/apps/drive/1jkX663WP-k2uoSbaJBbBBge5qPQlJ7RN?showPreview=true&showAssistant=true" },
             { name: "Vercel Database", hyperlinked: true, url: "https://vercel.com/bakers-projects-2b4704d9/enterprise-fiber-b51m/5MrY7nYQv7kpdiFnDLUvwWmb9bqc" },
             { name: "Real Live Data 2025", hyperlinked: true, url: "https://lookerstudio.google.com/reporting/dbbf2c74-31b8-4a5a-9c16-14571285348b" },
-            { name: "Real Live Data 2026", hyperlinked: false, url: null }
+            { name: "Real Live Data 2026", hyperlinked: true, url: "https://lookerstudio.google.com/reporting/aea17855-1ca4-438b-9fda-6b51e8d3fd95" }
           ]
         },
         {
