@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { COMPANY_DATA, COLOR_CONFIG } from '../constants';
-import { Section } from '../types';
+import { Section, Department } from '../types';
 
 interface SidebarProps {
   isOpen: boolean;
@@ -11,6 +11,8 @@ interface SidebarProps {
 export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onNavigate, onClose }) => {
   const [expandedDeptIds, setExpandedDeptIds] = useState<number[]>([]);
   const [expandedSectionIds, setExpandedSectionIds] = useState<string[]>([]);
+  const [isOperationsExpanded, setIsOperationsExpanded] = useState(true);
+  const [isPMOExpanded, setIsPMOExpanded] = useState(true);
 
   const toggleDept = (id: number) => {
     setExpandedDeptIds(prev => 
@@ -34,6 +36,15 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onNavigate, onClose })
     onNavigate(deptId, sectionId);
     if (window.innerWidth < 1024) onClose();
   };
+
+  // Restructured Groups based on latest requirements:
+  // Operations: Enterprise (1), Consumer (2), Fiber (3), FTTH Maint (4), Power (5)
+  // PMO: GSM (6), AsiaCell (7), Data Center (8)
+  const OPERATION_UNIT_IDS = [1, 2, 3, 4, 5];
+  const PMO_IDS = [6, 7, 8];
+
+  const operationDepts = COMPANY_DATA.departments.filter(d => OPERATION_UNIT_IDS.includes(d.id));
+  const pmoDepts = COMPANY_DATA.departments.filter(d => PMO_IDS.includes(d.id));
 
   // Recursive component for rendering sections and subsections
   const renderSection = (section: Section, deptId: number, level: number = 0) => {
@@ -77,6 +88,47 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onNavigate, onClose })
     );
   };
 
+  const renderDeptGroup = (depts: Department[]) => (
+    <div className="space-y-1">
+      {depts.map((dept) => {
+        const isExpanded = expandedDeptIds.includes(dept.id);
+        const iconClass = COLOR_CONFIG[dept.color].icon;
+        
+        return (
+          <div key={dept.id}>
+            <button 
+              className={`
+                w-full flex items-center justify-between px-4 py-3 rounded-lg 
+                hover:bg-slate-800 transition-all duration-200 text-left group
+                ${isExpanded ? 'bg-slate-800' : ''}
+              `}
+              onClick={() => toggleDept(dept.id)}
+            >
+              <div className="flex items-center gap-3">
+                <div className={`w-6 flex justify-center ${iconClass} group-hover:scale-110 transition-transform`}>
+                  <i className={`fas fa-${dept.icon}`}></i>
+                </div>
+                <span className="text-sm font-medium text-slate-200 group-hover:text-white">{dept.name}</span>
+              </div>
+              <i className={`fas fa-chevron-down text-xs text-slate-500 transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`}></i>
+            </button>
+            
+            <div 
+              className={`
+                overflow-hidden transition-all duration-300 ease-in-out
+                ${isExpanded ? 'max-h-[1000px] opacity-100' : 'max-h-0 opacity-0'}
+              `}
+            >
+              <div className="pl-2 pr-2 py-1 space-y-1">
+                {dept.sections.map((section) => renderSection(section, dept.id))}
+              </div>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  );
+
   return (
     <>
       {/* Overlay for mobile */}
@@ -107,99 +159,86 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onNavigate, onClose })
               }}
             />
             <div>
-              <h1 className="text-xl font-bold text-white">Agile</h1>
-              <p className="text-xs text-slate-400">FTTH Database System</p>
+              <h1 className="text-xl font-bold text-white tracking-tight">Agile</h1>
+              <p className="text-xs text-slate-400">Database System</p>
             </div>
           </div>
         </div>
 
         {/* Navigation */}
-        <nav className="p-4">
-          <div className="mb-4">
+        <nav className="p-4 space-y-6">
+          <div>
             <button 
               onClick={handleHomeClick}
               className="w-full flex items-center gap-3 px-4 py-3 rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition-colors shadow-lg shadow-blue-900/20"
             >
               <i className="fas fa-home"></i>
-              <span>Dashboard Home</span>
+              <span className="font-medium">Dashboard Home</span>
             </button>
           </div>
 
-          <p className="text-xs text-slate-500 uppercase tracking-wider px-4 mb-2 font-semibold">Departments</p>
+          {/* Operation Unit Menu */}
+          <div>
+            <button 
+              onClick={() => setIsOperationsExpanded(!isOperationsExpanded)}
+              className="w-full flex items-center justify-between px-4 mb-3 group hover:opacity-80 transition-opacity"
+            >
+              <div className="flex items-center gap-2">
+                <i className="fas fa-cogs text-xs text-blue-400"></i>
+                <p className="text-xs text-slate-500 uppercase tracking-widest font-bold">Operation Unit</p>
+              </div>
+              <i className={`fas fa-chevron-${isOperationsExpanded ? 'up' : 'down'} text-[10px] text-slate-600`}></i>
+            </button>
+            <div className={`overflow-hidden transition-all duration-300 ${isOperationsExpanded ? 'max-h-[2000px] opacity-100' : 'max-h-0 opacity-0'}`}>
+               {renderDeptGroup(operationDepts)}
+            </div>
+          </div>
 
-          <div className="space-y-1">
-            {COMPANY_DATA.departments.map((dept) => {
-              const isExpanded = expandedDeptIds.includes(dept.id);
-              const iconClass = COLOR_CONFIG[dept.color].icon;
-              
-              return (
-                <div key={dept.id}>
-                  <button 
-                    className={`
-                      w-full flex items-center justify-between px-4 py-3 rounded-lg 
-                      hover:bg-slate-800 transition-all duration-200 text-left group
-                      ${isExpanded ? 'bg-slate-800' : ''}
-                    `}
-                    onClick={() => toggleDept(dept.id)}
-                  >
-                    <div className="flex items-center gap-3">
-                      <div className={`w-6 flex justify-center ${iconClass} group-hover:scale-110 transition-transform`}>
-                        <i className={`fas fa-${dept.icon}`}></i>
-                      </div>
-                      <span className="text-sm font-medium text-slate-200 group-hover:text-white">{dept.name}</span>
-                    </div>
-                    <i className={`fas fa-chevron-down text-xs text-slate-500 transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`}></i>
-                  </button>
-                  
-                  <div 
-                    className={`
-                      overflow-hidden transition-all duration-300 ease-in-out
-                      ${isExpanded ? 'max-h-[1000px] opacity-100' : 'max-h-0 opacity-0'}
-                    `}
-                  >
-                    <div className="pl-2 pr-2 py-1 space-y-1">
-                      {dept.sections.map((section) => renderSection(section, dept.id))}
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
+          {/* PMO Menu */}
+          <div>
+            <button 
+              onClick={() => setIsPMOExpanded(!isPMOExpanded)}
+              className="w-full flex items-center justify-between px-4 mb-3 group hover:opacity-80 transition-opacity"
+            >
+              <div className="flex items-center gap-2">
+                <i className="fas fa-project-diagram text-xs text-orange-400"></i>
+                <p className="text-xs text-slate-500 uppercase tracking-widest font-bold">PMO</p>
+              </div>
+              <i className={`fas fa-chevron-${isPMOExpanded ? 'up' : 'down'} text-[10px] text-slate-600`}></i>
+            </button>
+            <div className={`overflow-hidden transition-all duration-300 ${isPMOExpanded ? 'max-h-[2000px] opacity-100' : 'max-h-0 opacity-0'}`}>
+               {renderDeptGroup(pmoDepts)}
+            </div>
           </div>
 
           {/* Shortcuts */}
-          <div className="mt-8 pt-4 border-t border-slate-700">
-            <p className="text-xs text-slate-500 uppercase tracking-wider px-4 mb-3 font-semibold">Shortcuts</p>
+          <div className="pt-4 border-t border-slate-700">
+            <p className="text-xs text-slate-500 uppercase tracking-wider px-4 mb-3 font-semibold">Quick Links</p>
             <div className="px-1 space-y-3">
               <a 
                 href="https://baserow.io/workspace/160461" 
                 target="_blank" 
                 rel="noreferrer"
-                className="flex items-center gap-3 px-4 py-3 rounded-lg bg-gradient-to-r from-emerald-600 to-emerald-700 text-white hover:from-emerald-500 hover:to-emerald-600 transition-all shadow-lg hover:shadow-emerald-500/25 group"
+                className="flex items-center gap-3 px-4 py-3 rounded-lg bg-slate-800 text-white hover:bg-slate-700 transition-all group"
               >
-                <div className="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
-                  <i className="fas fa-table"></i>
+                <div className="w-8 h-8 bg-emerald-600/20 text-emerald-400 rounded-lg flex items-center justify-center group-hover:bg-emerald-600 group-hover:text-white transition-all">
+                  <i className="fas fa-table text-xs"></i>
                 </div>
-                <div>
-                  <span className="font-medium text-sm block">Baserow Database</span>
-                  <span className="text-[10px] text-emerald-200 uppercase tracking-wide">External Workspace</span>
-                </div>
-                <i className="fas fa-external-link-alt text-xs ml-auto opacity-75"></i>
+                <span className="font-medium text-sm">Baserow</span>
+                <i className="fas fa-external-link-alt text-[10px] ml-auto opacity-50 group-hover:opacity-100"></i>
               </a>
 
               <a 
                 href="https://aistudio.google.com/prompts/1vEoCqtWkdI6NjubInrCdAc6om--DSp9q" 
                 target="_blank" 
                 rel="noreferrer"
-                className="flex items-center gap-3 px-4 py-3 rounded-lg bg-gradient-to-r from-indigo-600 to-indigo-700 text-white hover:from-indigo-500 hover:to-indigo-600 transition-all shadow-lg hover:shadow-indigo-500/25 group"
+                className="flex items-center gap-3 px-4 py-3 rounded-lg bg-slate-800 text-white hover:bg-slate-700 transition-all group"
               >
-                <div className="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
-                  <i className="fas fa-paper-plane"></i>
+                <div className="w-8 h-8 bg-indigo-600/20 text-indigo-400 rounded-lg flex items-center justify-center group-hover:bg-indigo-600 group-hover:text-white transition-all">
+                  <i className="fas fa-paper-plane text-xs"></i>
                 </div>
-                <div>
-                  <span className="font-medium text-sm block">Document Sender</span>
-                  <span className="text-[10px] text-indigo-200 uppercase tracking-wide">Form for Data Center Project</span>
-                </div>
-                <i className="fas fa-external-link-alt text-xs ml-auto opacity-75"></i>
+                <span className="font-medium text-sm">Doc Sender</span>
+                <i className="fas fa-external-link-alt text-[10px] ml-auto opacity-50 group-hover:opacity-100"></i>
               </a>
             </div>
           </div>
@@ -207,9 +246,9 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onNavigate, onClose })
 
         {/* Footer */}
         <div className="p-4 border-t border-slate-700 bg-slate-900 mt-auto sticky bottom-0">
-          <div className="flex items-center gap-2 text-slate-400 text-sm justify-center">
-            <i className="fas fa-network-wired"></i>
-            <span>FTTH Management v2.0</span>
+          <div className="flex items-center gap-2 text-slate-500 text-[10px] justify-center uppercase tracking-widest font-medium">
+            <i className="fas fa-shield-alt text-blue-500"></i>
+            <span>Agile Systems v2.1</span>
           </div>
         </div>
       </aside>
