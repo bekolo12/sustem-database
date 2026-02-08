@@ -62,7 +62,9 @@ export const COMPANY_DATA: CompanyData = {
                   labels: [
                     { name: "Database", hyperlinked: false, url: null },
                     { name: "Projected Dashboard", hyperlinked: false, url: null },
-                    { name: "Bulk Data", hyperlinked: true, url: "https://docs.google.com/spreadsheets/d/1_xOaw7WKmKNzLAXZFbksucVaUELiVpI54ELV8cDyLDU/edit?usp=sharing" },
+                    { name: "Baghdad Application Fiber", hyperlinked: true, url: "https://baghdad-fiber.vercel.app/" },
+                    { name: "Dora Bulk Data", hyperlinked: true, url: "https://docs.google.com/spreadsheets/d/1daRpzz7JYAxAJtu2Uhm1uihmH8-H8zl1_tNz3gD14jw/edit?usp=sharing" },
+                    { name: "Gzl Bulk Data", hyperlinked: false, url: null },
                     { name: "Real Live Data", hyperlinked: false, url: null }
                   ]
                 },
@@ -343,6 +345,9 @@ export const LABEL_ICONS: Record<string, string> = {
   'Bulk Data': 'fa-layer-group',
   'Bulk Data 2025': 'fa-layer-group',
   'Bulk Data 2026': 'fa-layer-group',
+  'Dora Bulk Data': 'fa-layer-group',
+  'Gzl Bulk Data': 'fa-layer-group',
+  'Baghdad Application Fiber': 'fa-rocket',
   'Micro Database': 'fa-cube',
   'Micro Database (Temp)': 'fa-cube',
   'Vercel Database': 'fa-cloud',
