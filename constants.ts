@@ -1,3 +1,4 @@
+
 import { CompanyData } from './types';
 
 export const COMPANY_DATA: CompanyData = {
@@ -32,37 +33,11 @@ export const COMPANY_DATA: CompanyData = {
             {
               id: "civil_progress",
               name: "Civil Progress",
-              labels: [],
-              subSections: [
-                {
-                  id: "region_salah_al_deen",
-                  name: "Salah Al-Deen",
-                  labels: [
-                    { name: "Database", hyperlinked: false, url: null },
-                    { name: "Projected Dashboard", hyperlinked: false, url: null },
-                    { name: "Bulk Data", hyperlinked: true, url: "https://docs.google.com/spreadsheets/d/1DEX97Gl7CY1VvfT1lJEgrc82Pu6ufNSlkJ-q8bL40rM/edit?usp=sharing" },
-                    { name: "Real Live Data", hyperlinked: false, url: null }
-                  ]
-                },
-                {
-                  id: "region_baghdad",
-                  name: "Baghdad",
-                  labels: [
-                    { name: "Database", hyperlinked: false, url: null },
-                    { name: "Projected Dashboard", hyperlinked: false, url: null },
-                    { name: "Bulk Data", hyperlinked: true, url: "https://docs.google.com/spreadsheets/d/18MYYXJR-Zfg5ETAVUkGr1XuElbgCFe1QbndprO3nNtQ/edit?usp=sharing" },
-                    { name: "Real Live Data", hyperlinked: false, url: null }
-                  ]
-                },
-                {
-                  id: "region_thyqar",
-                  name: "Thyqar",
-                  labels: [
-                    { name: "Database", hyperlinked: false, url: null },
-                    { name: "Projected Dashboard", hyperlinked: false, url: null },
-                    { name: "Bulk Data", hyperlinked: true, url: "https://docs.google.com/spreadsheets/d/1fMiAUKl4HPFvKS5DDt-dfSOrq7m5aAhmUL2vNowh9Fo/edit?usp=sharing" },
-                    { name: "Real Live Data", hyperlinked: false, url: null }
-                  ]
+              labels: [
+                { 
+                  name: "Press to reach civil data base", 
+                  hyperlinked: true, 
+                  url: "https://sdd-ebon.vercel.app/" 
                 }
               ]
             },
@@ -378,5 +353,6 @@ export const LABEL_ICONS: Record<string, string> = {
   'Civil Plan 2026': 'fa-drafting-compass',
   'Salah Al-Deen': 'fa-map-marker-alt',
   'Baghdad': 'fa-city',
-  'Thyqar': 'fa-landmark'
+  'Thyqar': 'fa-landmark',
+  'Press to reach civil data base': 'fa-database'
 };
