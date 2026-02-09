@@ -64,7 +64,7 @@ export const COMPANY_DATA: CompanyData = {
                     { name: "Projected Dashboard", hyperlinked: false, url: null },
                     { name: "Baghdad Application Fiber", hyperlinked: true, url: "https://baghdad-fiber.vercel.app/" },
                     { name: "Dora Bulk Data", hyperlinked: true, url: "https://docs.google.com/spreadsheets/d/1daRpzz7JYAxAJtu2Uhm1uihmH8-H8zl1_tNz3gD14jw/edit?usp=sharing" },
-                    { name: "Gzl Bulk Data", hyperlinked: false, url: null },
+                    { name: "Gzl Bulk Data", hyperlinked: true, url: "https://docs.google.com/spreadsheets/d/10v0f1B1csxKT-KuHBKgB9QmlI2UNhz3sFZhOUR__9Uk/edit?usp=sharing" },
                     { name: "Real Live Data", hyperlinked: false, url: null }
                   ]
                 },
