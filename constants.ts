@@ -74,6 +74,8 @@ export const COMPANY_DATA: CompanyData = {
                   name: "Thyqar",
                   labels: [
                     { name: "Database", hyperlinked: false, url: null },
+                    { name: "New Database", hyperlinked: true, url: "https://docs.google.com/spreadsheets/d/1BtoyUpGgOvh0RCDnPkHKoHx-KITwxO02mhx7_3Uarf8/edit?usp=sharing" },
+                    { name: "Entry Form", hyperlinked: true, url: "https://dddddsdfsdfsdfsf.vercel.app/" },
                     { name: "Projected Dashboard", hyperlinked: false, url: null },
                     { name: "Bulk Data", hyperlinked: true, url: "https://docs.google.com/spreadsheets/d/1uSl7mWaePVJzRCopbKuDbuPgvDIyLjkJF13f_HR-1IY/edit?usp=sharing" },
                     { name: "Real Live Data", hyperlinked: false, url: null }
@@ -340,6 +342,7 @@ export const COLOR_CONFIG = {
 
 export const LABEL_ICONS: Record<string, string> = {
   'Database': 'fa-database',
+  'New Database': 'fa-database',
   'Projected Dashboard': 'fa-chart-line',
   'Projected Dashboard 2025': 'fa-chart-line',
   'Projected Dashboard 2026': 'fa-chart-line',
@@ -361,5 +364,6 @@ export const LABEL_ICONS: Record<string, string> = {
   'Baghdad': 'fa-city',
   'Thyqar': 'fa-landmark',
   'Press to reach civil data base': 'fa-database',
-  'Entry Form App': 'fa-pen-to-square'
+  'Entry Form App': 'fa-pen-to-square',
+  'Entry Form': 'fa-pen-to-square'
 };
