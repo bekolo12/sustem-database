@@ -50,7 +50,8 @@ export const COMPANY_DATA: CompanyData = {
                   id: "fiber_region_salah_al_deen",
                   name: "Salah Al-Deen",
                   labels: [
-                    { name: "Database", hyperlinked: false, url: null },
+                    { name: "Database", hyperlinked: true, url: "https://docs.google.com/spreadsheets/d/1vcDJ3NpB6QiNiEY4qjXN8-LfZuCg6QPN5SqVVaf7umg/edit?usp=sharing" },
+                    { name: "Entry Form App", hyperlinked: true, url: "https://43-black.vercel.app/" },
                     { name: "Projected Dashboard", hyperlinked: false, url: null },
                     { name: "Bulk Data", hyperlinked: true, url: "https://docs.google.com/spreadsheets/d/1lQzLCQdDneEGemShtOqydYUIO2j9UqcD80ekQbD6ESw/edit?usp=sharing" },
                     { name: "Real Live Data", hyperlinked: false, url: null }
@@ -359,5 +360,6 @@ export const LABEL_ICONS: Record<string, string> = {
   'Salah Al-Deen': 'fa-map-marker-alt',
   'Baghdad': 'fa-city',
   'Thyqar': 'fa-landmark',
-  'Press to reach civil data base': 'fa-database'
+  'Press to reach civil data base': 'fa-database',
+  'Entry Form App': 'fa-pen-to-square'
 };
