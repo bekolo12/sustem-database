@@ -28,60 +28,11 @@ export const COMPANY_DATA: CompanyData = {
         {
           id: "regions_complex_reports",
           name: "Regions Complex Reports",
-          labels: [],
-          subSections: [
+          labels: [
             {
-              id: "civil_progress",
-              name: "Civil Progress",
-              labels: [
-                { 
-                  name: "Press to reach civil data base", 
-                  hyperlinked: true, 
-                  url: "https://sdd-ebon.vercel.app/" 
-                }
-              ]
-            },
-            {
-              id: "fiber_progress",
-              name: "Fiber Progress",
-              labels: [],
-              subSections: [
-                {
-                  id: "fiber_region_salah_al_deen",
-                  name: "Salah Al-Deen",
-                  labels: [
-                    { name: "Database", hyperlinked: true, url: "https://docs.google.com/spreadsheets/d/1vcDJ3NpB6QiNiEY4qjXN8-LfZuCg6QPN5SqVVaf7umg/edit?usp=sharing" },
-                    { name: "Entry Form App", hyperlinked: true, url: "https://43-black.vercel.app/" },
-                    { name: "Projected Dashboard", hyperlinked: false, url: null },
-                    { name: "Bulk Data", hyperlinked: true, url: "https://docs.google.com/spreadsheets/d/1lQzLCQdDneEGemShtOqydYUIO2j9UqcD80ekQbD6ESw/edit?usp=sharing" },
-                    { name: "Real Live Data", hyperlinked: false, url: null }
-                  ]
-                },
-                {
-                  id: "fiber_region_baghdad",
-                  name: "Baghdad",
-                  labels: [
-                    { name: "Database", hyperlinked: false, url: null },
-                    { name: "Projected Dashboard", hyperlinked: false, url: null },
-                    { name: "Baghdad Application Fiber", hyperlinked: true, url: "https://baghdad-fiber.vercel.app/" },
-                    { name: "Dora Bulk Data", hyperlinked: true, url: "https://docs.google.com/spreadsheets/d/1daRpzz7JYAxAJtu2Uhm1uihmH8-H8zl1_tNz3gD14jw/edit?usp=sharing" },
-                    { name: "Gzl Bulk Data", hyperlinked: true, url: "https://docs.google.com/spreadsheets/d/10v0f1B1csxKT-KuHBKgB9QmlI2UNhz3sFZhOUR__9Uk/edit?usp=sharing" },
-                    { name: "Real Live Data", hyperlinked: false, url: null }
-                  ]
-                },
-                {
-                  id: "fiber_region_thyqar",
-                  name: "Thyqar",
-                  labels: [
-                    { name: "Database", hyperlinked: false, url: null },
-                    { name: "New Database", hyperlinked: true, url: "https://docs.google.com/spreadsheets/d/1BtoyUpGgOvh0RCDnPkHKoHx-KITwxO02mhx7_3Uarf8/edit?usp=sharing" },
-                    { name: "Entry Form", hyperlinked: true, url: "https://dddddsdfsdfsdfsf.vercel.app/" },
-                    { name: "Projected Dashboard", hyperlinked: false, url: null },
-                    { name: "Bulk Data", hyperlinked: true, url: "https://docs.google.com/spreadsheets/d/1uSl7mWaePVJzRCopbKuDbuPgvDIyLjkJF13f_HR-1IY/edit?usp=sharing" },
-                    { name: "Real Live Data", hyperlinked: false, url: null }
-                  ]
-                }
-              ]
+              name: "Complex Reports Portal",
+              hyperlinked: true,
+              url: "https://baker-waleed123123123.vercel.app/"
             }
           ]
         }
@@ -341,6 +292,7 @@ export const COLOR_CONFIG = {
 };
 
 export const LABEL_ICONS: Record<string, string> = {
+  'Complex Reports Portal': 'fa-project-diagram',
   'Database': 'fa-database',
   'New Database': 'fa-database',
   'Projected Dashboard': 'fa-chart-line',
