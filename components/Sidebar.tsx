@@ -41,7 +41,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onNavigate, onClose })
   // Operations: Enterprise (1), Consumer (2), Fiber (3), FTTH Maint (4), Power (5)
   // PMO: GSM (6), AsiaCell (7), Data Center (8)
   const OPERATION_UNIT_IDS = [1, 2, 3, 4, 5];
-  const PMO_IDS = [6, 7, 8];
+  const PMO_IDS = [6, 7, 8, 9];
 
   const operationDepts = COMPANY_DATA.departments.filter(d => OPERATION_UNIT_IDS.includes(d.id));
   const pmoDepts = COMPANY_DATA.departments.filter(d => PMO_IDS.includes(d.id));

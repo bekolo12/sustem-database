@@ -2,8 +2,8 @@ import React from 'react';
 
 export const Stats: React.FC = () => {
   const stats = [
-    { value: '8', label: 'Departments', color: 'text-blue-600' },
-    { value: '9', label: 'Sections', color: 'text-orange-500' },
+    { value: '9', label: 'Departments', color: 'text-blue-600' },
+    { value: '12', label: 'Sections', color: 'text-orange-500' },
     { value: '14+', label: 'Active Links', color: 'text-green-600' },
     { value: '6', label: 'Database Types', color: 'text-purple-600' }
   ];

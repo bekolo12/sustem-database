@@ -188,6 +188,26 @@ export const COMPANY_DATA: CompanyData = {
       ]
     },
     {
+      id: 9,
+      name: "Ankido",
+      icon: "file-signature",
+      color: "blue",
+      description: "Ankido Project Management and Documentation",
+      sections: [
+        {
+          id: "ankido_main",
+          name: "Ankido",
+          labels: [
+            { 
+              name: "Ankido Link", 
+              hyperlinked: true, 
+              url: "https://docs.google.com/spreadsheets/d/1aS3x2SP_qeL32dLNP22hYrn0_NFFJKFcDQ1qznS0Wqo/edit?usp=sharing" 
+            }
+          ]
+        }
+      ]
+    },
+    {
       id: 1,
       name: "Enterprise Department",
       icon: "building",
@@ -292,6 +312,7 @@ export const COLOR_CONFIG = {
 };
 
 export const LABEL_ICONS: Record<string, string> = {
+  'Ankido Link': 'fa-file-excel',
   'Complex Reports Portal': 'fa-project-diagram',
   'Database': 'fa-database',
   'New Database': 'fa-database',
