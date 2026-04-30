@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { Department, Section } from '../types';
 import { COLOR_CONFIG, LABEL_ICONS } from '../constants';
+import { motion } from 'motion/react';
 
 interface SectionDetailProps {
   dept: Department;
@@ -10,6 +11,7 @@ interface SectionDetailProps {
 
 export const SectionDetail: React.FC<SectionDetailProps> = ({ dept, section, onBack }) => {
   const colors = COLOR_CONFIG[dept.color];
+  const [airplaneMode, setAirplaneMode] = React.useState(false);
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -17,13 +19,40 @@ export const SectionDetail: React.FC<SectionDetailProps> = ({ dept, section, onB
 
   return (
     <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
-      <button 
-        onClick={onBack}
-        className="flex items-center gap-2 text-blue-600 hover:text-blue-800 mb-8 px-4 py-2 rounded-lg hover:bg-blue-50 transition-colors w-fit"
-      >
-        <i className="fas fa-arrow-left"></i>
-        <span className="font-medium">Back to Departments</span>
-      </button>
+      <div className="flex items-center justify-between mb-8">
+        <button 
+          onClick={onBack}
+          className="flex items-center gap-2 text-blue-600 hover:text-blue-800 px-4 py-2 rounded-lg hover:bg-blue-50 transition-colors w-fit"
+        >
+          <i className="fas fa-arrow-left"></i>
+          <span className="font-medium">Back to Departments</span>
+        </button>
+
+        <div className="flex items-center gap-3 bg-white px-4 py-2 rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
+           <span className="text-[10px] uppercase tracking-widest font-bold text-gray-400">Airplane</span>
+           <button 
+              onClick={() => setAirplaneMode(!airplaneMode)}
+              className="relative w-10 h-5 rounded-full bg-gray-200 transition-colors duration-200 outline-none"
+            >
+              <motion.div 
+                animate={{ 
+                  x: airplaneMode ? 20 : 0,
+                  backgroundColor: airplaneMode ? '#2563eb' : '#ffffff' 
+                }}
+                transition={{ type: "spring", stiffness: 500, damping: 30 }}
+                className="absolute top-0.5 left-0.5 w-4 h-4 rounded-full shadow-sm flex items-center justify-center overflow-hidden"
+              >
+                <motion.i 
+                  animate={{ 
+                    rotate: airplaneMode ? 0 : -45,
+                    opacity: airplaneMode ? 1 : 0.5
+                  }}
+                  className={`fas fa-plane text-[8px] ${airplaneMode ? 'text-white' : 'text-gray-300'}`}
+                ></motion.i>
+              </motion.div>
+            </button>
+        </div>
+      </div>
 
       <div className="bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100 mb-8">
         <div className="p-8 md:p-10 border-b border-gray-100 relative overflow-hidden">

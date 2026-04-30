@@ -1,6 +1,7 @@
 import React from 'react';
 import { Department, Section } from '../types';
 import { COLOR_CONFIG } from '../constants';
+import { motion, AnimatePresence } from 'motion/react';
 
 interface DepartmentCardProps {
   dept: Department;
@@ -39,19 +40,47 @@ export const DepartmentCard: React.FC<DepartmentCardProps> = ({ dept, onSelectSe
   };
 
   const displaySections = getLeafSections(dept.sections);
+  const [airplaneMode, setAirplaneMode] = React.useState(false);
 
   return (
     <div className="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 flex flex-col h-full">
       <div className={`${colors.bg} p-5 text-white`}>
-        <div className="flex items-center gap-4">
-          <div className="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center shadow-inner backdrop-blur-sm">
-            <i className={`fas fa-${dept.icon} text-2xl`}></i>
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-4">
+            <div className="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center shadow-inner backdrop-blur-sm">
+              <i className={`fas fa-${dept.icon} text-2xl`}></i>
+            </div>
+            <div>
+              <h3 className="text-xl font-bold leading-tight">{dept.name}</h3>
+              <p className="text-sm opacity-90 mt-1 font-light">
+                {displaySections.length} Sections • {activeLinks} Active Links
+              </p>
+            </div>
           </div>
-          <div>
-            <h3 className="text-xl font-bold leading-tight">{dept.name}</h3>
-            <p className="text-sm opacity-90 mt-1 font-light">
-              {displaySections.length} Sections • {activeLinks} Active Links
-            </p>
+
+          <div className="flex flex-col items-center gap-1 bg-black/10 p-2 rounded-xl border border-white/10 overflow-hidden">
+            <button 
+              onClick={() => setAirplaneMode(!airplaneMode)}
+              className="relative w-10 h-5 rounded-full bg-white/20 transition-colors duration-200 outline-none"
+            >
+              <motion.div 
+                animate={{ x: airplaneMode ? 20 : 0 }}
+                transition={{ type: "spring", stiffness: 500, damping: 30 }}
+                className="absolute top-0.5 left-0.5 w-4 h-4 rounded-full bg-white shadow-sm"
+              />
+            </button>
+            <div className="flex items-center gap-1 text-[8px] uppercase tracking-widest font-bold opacity-60 relative h-3">
+              <AnimatePresence mode="wait">
+                <motion.i 
+                  key={airplaneMode ? 'on' : 'off'}
+                  initial={{ y: 5, opacity: 0, x: -5 }}
+                  animate={{ y: 0, opacity: 1, x: 0 }}
+                  exit={{ y: -5, opacity: 0, x: 5 }}
+                  className={`fas fa-plane ${airplaneMode ? 'text-yellow-300' : 'text-white'}`}
+                ></motion.i>
+              </AnimatePresence>
+              <span>Mode</span>
+            </div>
           </div>
         </div>
       </div>

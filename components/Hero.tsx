@@ -1,6 +1,9 @@
 import React from 'react';
+import { motion, AnimatePresence } from 'motion/react';
 
 export const Hero: React.FC = () => {
+  const [airplaneMode, setAirplaneMode] = React.useState(false);
+
   return (
     <section className="relative overflow-hidden text-white py-20 px-6 rounded-b-[3rem] shadow-2xl mb-8 -mx-6 md:mx-0 md:rounded-3xl">
       {/* Background with overlay */}
@@ -11,6 +14,35 @@ export const Hero: React.FC = () => {
             alt="Background" 
             className="w-full h-full object-cover opacity-20 mix-blend-overlay"
          />
+      </div>
+
+      {/* Airplane Mode Switch */}
+      <div className="absolute top-6 right-6 z-20 flex flex-col items-center gap-1 bg-white/10 backdrop-blur-md p-3 rounded-2xl border border-white/20 shadow-xl overflow-hidden">
+        <button 
+          onClick={() => setAirplaneMode(!airplaneMode)}
+          className="relative w-12 h-6 rounded-full bg-white/20 transition-colors duration-200 outline-none hover:bg-white/30"
+        >
+          <motion.div 
+            animate={{ 
+              x: airplaneMode ? 24 : 0,
+              rotate: airplaneMode ? 360 : 0
+            }}
+            transition={{ type: "spring", stiffness: 400, damping: 25 }}
+            className="absolute top-1 left-1 w-4 h-4 rounded-full bg-white shadow-xl"
+          />
+        </button>
+        <div className="flex items-center gap-1 text-[9px] uppercase tracking-widest font-black text-white/60 h-4 items-center">
+          <AnimatePresence mode="wait">
+            <motion.i 
+              key={airplaneMode ? 'flying' : 'static'}
+              initial={{ x: -10, y: 10, opacity: 0, rotate: -45 }}
+              animate={{ x: 0, y: 0, opacity: 1, rotate: 0 }}
+              exit={{ x: 10, y: -10, opacity: 0, rotate: 45 }}
+              className={`fas fa-plane ${airplaneMode ? 'text-yellow-400' : 'text-white'}`}
+            ></motion.i>
+          </AnimatePresence>
+          <span>Airplane</span>
+        </div>
       </div>
 
       <div className="relative z-10 max-w-6xl mx-auto">

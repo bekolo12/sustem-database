@@ -202,6 +202,11 @@ export const COMPANY_DATA: CompanyData = {
               name: "Ankido Link", 
               hyperlinked: true, 
               url: "https://docs.google.com/spreadsheets/d/1aS3x2SP_qeL32dLNP22hYrn0_NFFJKFcDQ1qznS0Wqo/edit?usp=sharing" 
+            },
+            {
+              name: "Total Archiving System",
+              hyperlinked: true,
+              url: "https://drive.google.com/drive/project/1JgnfnmseaFrxCd6fTmf3okDTEXfmzF2m?usp=sharing"
             }
           ]
         }
@@ -313,6 +318,7 @@ export const COLOR_CONFIG = {
 
 export const LABEL_ICONS: Record<string, string> = {
   'Ankido Link': 'fa-file-excel',
+  'Total Archiving System': 'fa-archive',
   'Complex Reports Portal': 'fa-project-diagram',
   'Database': 'fa-database',
   'New Database': 'fa-database',
