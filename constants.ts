@@ -228,6 +228,11 @@ export const COMPANY_DATA: CompanyData = {
               name: "Al Entisar Part 2",
               hyperlinked: true,
               url: "https://docs.google.com/presentation/d/1JV2XVY0u6Y05Gjqgzt5Pv2y6xPqtBOK2/edit?usp=sharing&ouid=106495355661197696100&rtpof=true&sd=true"
+            },
+            {
+              name: "New Part of Entisar",
+              hyperlinked: true,
+              url: "https://docs.google.com/presentation/d/1VQA6-DCqYwTl5ie-HhxsPe9rl9DHkil2/edit?usp=sharing&ouid=106495355661197696100&rtpof=true&sd=true"
             }
           ]
         }
@@ -368,5 +373,6 @@ export const LABEL_ICONS: Record<string, string> = {
   'Entry Form': 'fa-pen-to-square',
   'Entisar and Mamaon and Jadrya': 'fa-file-powerpoint',
   'Al Entisar Part 2': 'fa-file-powerpoint',
+  'New Part of Entisar': 'fa-file-powerpoint',
   'Bakup Section AAA': 'fa-folder-open'
 };
