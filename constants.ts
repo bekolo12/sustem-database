@@ -209,6 +209,27 @@ export const COMPANY_DATA: CompanyData = {
               url: "https://drive.google.com/drive/project/1JgnfnmseaFrxCd6fTmf3okDTEXfmzF2m?usp=sharing"
             }
           ]
+        },
+        {
+          id: "bakup_section_aaa",
+          name: "Process of Entisar and Sink and Mammon and Jadrya Reports",
+          labels: [
+            {
+              name: "Bakup Section AAA",
+              hyperlinked: false,
+              url: null
+            },
+            {
+              name: "Entisar and Mamaon and Jadrya",
+              hyperlinked: true,
+              url: "https://docs.google.com/presentation/d/1AGg53r7posAjTewYxODSET2RO8luFDPU/edit?usp=sharing&ouid=106495355661197696100&rtpof=true&sd=true"
+            },
+            {
+              name: "Al Entisar Part 2",
+              hyperlinked: true,
+              url: "https://docs.google.com/presentation/d/1JV2XVY0u6Y05Gjqgzt5Pv2y6xPqtBOK2/edit?usp=sharing&ouid=106495355661197696100&rtpof=true&sd=true"
+            }
+          ]
         }
       ]
     },
@@ -344,5 +365,8 @@ export const LABEL_ICONS: Record<string, string> = {
   'Thyqar': 'fa-landmark',
   'Press to reach civil data base': 'fa-database',
   'Entry Form App': 'fa-pen-to-square',
-  'Entry Form': 'fa-pen-to-square'
+  'Entry Form': 'fa-pen-to-square',
+  'Entisar and Mamaon and Jadrya': 'fa-file-powerpoint',
+  'Al Entisar Part 2': 'fa-file-powerpoint',
+  'Bakup Section AAA': 'fa-folder-open'
 };
