@@ -73,6 +73,17 @@ export const COMPANY_DATA: CompanyData = {
             { name: "Real Live Data 2025", hyperlinked: true, url: "https://lookerstudio.google.com/reporting/be957cb4-e042-4720-b29a-c81c21804072" },
             { name: "Real Live Data 2026", hyperlinked: true, url: "https://lookerstudio.google.com/reporting/318befcd-c6b8-4c99-8bac-43a4b364737b" }
           ]
+        },
+        {
+          id: "new_received_data",
+          name: "New Received Data",
+          labels: [
+            {
+              name: "April",
+              hyperlinked: true,
+              url: "https://docs.google.com/spreadsheets/d/13ewEzLH61yaKii-Q0q9y1vN67eM0op4T/edit?usp=sharing&ouid=106495355661197696100&rtpof=true&sd=true"
+            }
+          ]
         }
       ]
     },
@@ -374,5 +385,6 @@ export const LABEL_ICONS: Record<string, string> = {
   'Entisar and Mamaon and Jadrya': 'fa-file-powerpoint',
   'Al Entisar Part 2': 'fa-file-powerpoint',
   'New Part of Entisar': 'fa-file-powerpoint',
-  'Bakup Section AAA': 'fa-folder-open'
+  'Bakup Section AAA': 'fa-folder-open',
+  'April': 'fa-calendar-check'
 };
