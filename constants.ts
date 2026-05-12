@@ -244,6 +244,36 @@ export const COMPANY_DATA: CompanyData = {
               name: "New Part of Entisar",
               hyperlinked: true,
               url: "https://docs.google.com/presentation/d/1VQA6-DCqYwTl5ie-HhxsPe9rl9DHkil2/edit?usp=sharing&ouid=106495355661197696100&rtpof=true&sd=true"
+            },
+            {
+              name: "Process of Accumulated MS Project and Stoppages",
+              hyperlinked: true,
+              url: "https://drive.google.com/drive/folders/1RQpvZYxN9thAMwkGxR5stYwyXVV-H6Fj?usp=sharing"
+            },
+            {
+              name: "Ahmed Ghassan Submit Final",
+              hyperlinked: true,
+              url: "https://drive.google.com/drive/folders/1RQpvZYxN9thAMwkGxR5stYwyXVV-H6Fj?usp=sharing"
+            },
+            {
+              name: "Entisar 2D and 3D Photos",
+              hyperlinked: true,
+              url: "https://drive.google.com/drive/folders/183RDGiIn-VnoxP7MSMFsw4I8oQ1UM14i?usp=sharing"
+            },
+            {
+              name: "Total Ms Project Files",
+              hyperlinked: true,
+              url: "https://drive.google.com/drive/folders/1YIoUsh7sIy3GdBycfrE5tNTToB56FjBh?usp=sharing"
+            },
+            {
+              name: "Sink 2D and 3D Photos",
+              hyperlinked: true,
+              url: "https://drive.google.com/drive/folders/1xCgzqpbjBUFfDLB3dqX2QltLtEQnu7rp?usp=sharing"
+            },
+            {
+              name: "Stoppage Total Files",
+              hyperlinked: true,
+              url: "https://drive.google.com/drive/folders/1hegAA6sqakbhTZZo44tgdEyiAvUot0Qi?usp=sharing"
             }
           ]
         }
@@ -385,6 +415,12 @@ export const LABEL_ICONS: Record<string, string> = {
   'Entisar and Mamaon and Jadrya': 'fa-file-powerpoint',
   'Al Entisar Part 2': 'fa-file-powerpoint',
   'New Part of Entisar': 'fa-file-powerpoint',
+  'Process of Accumulated MS Project and Stoppages': 'fa-file-signature',
+  'Ahmed Ghassan Submit Final': 'fa-paper-plane',
+  'Entisar 2D and 3D Photos': 'fa-images',
+  'Total Ms Project Files': 'fa-file-excel',
+  'Sink 2D and 3D Photos': 'fa-images',
+  'Stoppage Total Files': 'fa-folder-plus',
   'Bakup Section AAA': 'fa-folder-open',
   'April': 'fa-calendar-check'
 };
