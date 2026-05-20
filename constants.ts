@@ -82,6 +82,11 @@ export const COMPANY_DATA: CompanyData = {
               name: "April",
               hyperlinked: true,
               url: "https://docs.google.com/spreadsheets/d/13ewEzLH61yaKii-Q0q9y1vN67eM0op4T/edit?usp=sharing&ouid=106495355661197696100&rtpof=true&sd=true"
+            },
+            {
+              name: "Week 1 May",
+              hyperlinked: true,
+              url: "https://drive.google.com/drive/folders/1Mu4g-INfD6mZzemxrEOlGgqpM7USl_jn?usp=sharing"
             }
           ]
         }
@@ -422,5 +427,6 @@ export const LABEL_ICONS: Record<string, string> = {
   'Sink 2D and 3D Photos': 'fa-images',
   'Stoppage Total Files': 'fa-folder-plus',
   'Bakup Section AAA': 'fa-folder-open',
-  'April': 'fa-calendar-check'
+  'April': 'fa-calendar-check',
+  'Week 1 May': 'fa-calendar-check'
 };
