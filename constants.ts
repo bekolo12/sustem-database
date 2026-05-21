@@ -223,6 +223,11 @@ export const COMPANY_DATA: CompanyData = {
               name: "Total Archiving System",
               hyperlinked: true,
               url: "https://drive.google.com/drive/project/1JgnfnmseaFrxCd6fTmf3okDTEXfmzF2m?usp=sharing"
+            },
+            {
+              name: "Total Accumulated Ankido Tasks",
+              hyperlinked: true,
+              url: "https://docs.google.com/spreadsheets/d/1aS3x2SP_qeL32dLNP22hYrn0_NFFJKFcDQ1qznS0Wqo/edit?usp=sharing"
             }
           ]
         },
@@ -428,5 +433,6 @@ export const LABEL_ICONS: Record<string, string> = {
   'Stoppage Total Files': 'fa-folder-plus',
   'Bakup Section AAA': 'fa-folder-open',
   'April': 'fa-calendar-check',
-  'Week 1 May': 'fa-calendar-check'
+  'Week 1 May': 'fa-calendar-check',
+  'Total Accumulated Ankido Tasks': 'fa-file-excel'
 };
