@@ -228,6 +228,11 @@ export const COMPANY_DATA: CompanyData = {
               name: "Total Accumulated Ankido Tasks",
               hyperlinked: true,
               url: "https://docs.google.com/spreadsheets/d/1aS3x2SP_qeL32dLNP22hYrn0_NFFJKFcDQ1qznS0Wqo/edit?usp=sharing"
+            },
+            {
+              name: "Ankido Bidding Excel File",
+              hyperlinked: true,
+              url: "https://docs.google.com/spreadsheets/d/1aS3x2SP_qeL32dLNP22hYrn0_NFFJKFcDQ1qznS0Wqo/edit?usp=sharing"
             }
           ]
         },
@@ -434,5 +439,6 @@ export const LABEL_ICONS: Record<string, string> = {
   'Bakup Section AAA': 'fa-folder-open',
   'April': 'fa-calendar-check',
   'Week 1 May': 'fa-calendar-check',
-  'Total Accumulated Ankido Tasks': 'fa-file-excel'
+  'Total Accumulated Ankido Tasks': 'fa-file-excel',
+  'Ankido Bidding Excel File': 'fa-file-excel'
 };
