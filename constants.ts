@@ -289,6 +289,11 @@ export const COMPANY_DATA: CompanyData = {
               name: "Stoppage Total Files",
               hyperlinked: true,
               url: "https://drive.google.com/drive/folders/1hegAA6sqakbhTZZo44tgdEyiAvUot0Qi?usp=sharing"
+            },
+            {
+              name: "14/June/2026 Process of Entsar Sinak",
+              hyperlinked: true,
+              url: "https://docs.google.com/presentation/d/1E7AsfSATQ3rvcPYsgJMCetPuounAJ5YS/edit?usp=sharing&ouid=106495355661197696100&rtpof=true&sd=true"
             }
           ]
         }
@@ -440,5 +445,6 @@ export const LABEL_ICONS: Record<string, string> = {
   'April': 'fa-calendar-check',
   'Week 1 May': 'fa-calendar-check',
   'Total Accumulated Ankido Tasks': 'fa-file-excel',
-  'Ankido Bidding Excel File': 'fa-file-excel'
+  'Ankido Bidding Excel File': 'fa-file-excel',
+  '14/June/2026 Process of Entsar Sinak': 'fa-file-powerpoint'
 };
