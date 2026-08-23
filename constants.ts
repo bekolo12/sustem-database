@@ -87,6 +87,11 @@ export const COMPANY_DATA: CompanyData = {
               name: "Week 1 May",
               hyperlinked: true,
               url: "https://drive.google.com/drive/folders/1Mu4g-INfD6mZzemxrEOlGgqpM7USl_jn?usp=sharing"
+            },
+            {
+              name: "Total Next Data",
+              hyperlinked: true,
+              url: "https://docs.google.com/spreadsheets/d/1OMKMsaNk8PytICMa53aFmvKTmPb36vOQ9UjadN9NOQM/edit?usp=sharing"
             }
           ]
         }
@@ -464,5 +469,6 @@ export const LABEL_ICONS: Record<string, string> = {
   'Ankido Bidding Excel File': 'fa-file-excel',
   '14/June/2026 Process of Entsar Sinak': 'fa-file-powerpoint',
   'Sinak': 'fa-file-pdf',
-  'Entisar': 'fa-file-pdf'
+  'Entisar': 'fa-file-pdf',
+  'Total Next Data': 'fa-file-excel'
 };
